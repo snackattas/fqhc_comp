@@ -17,12 +17,12 @@ class RequirementAdmin(admin.ModelAdmin):
     list_display = ('step', 'name')
 
 class SubRequirementAdmin(admin.ModelAdmin):
-    fields = ('requirement', 'step', 'name', 'text')
-    list_display = ('requirement', 'step', 'name')
+    fields = ('step', 'name', 'text', 'requirement')
+    list_display = ('step', 'name', 'requirement')
 
 class ResponseAdmin(admin.ModelAdmin):
     fields = ('fqhc', 'subrequirement', 'response', 'expiration', 'signed')
-    list_display = ('fqhc', 'subrequirement', 'response', 'expiration', 'signed')
+    list_display = ('fqhc', 'subrequirement', 'response','pdf', 'expiration', 'signed')
 
 admin.site.register(FQHC, FQHCAdmin)
 admin.site.register(UserProfile, UserProfileAdmin)

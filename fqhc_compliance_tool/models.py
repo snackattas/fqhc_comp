@@ -39,12 +39,24 @@ class Requirement(TimeStampedModel):
     name = models.CharField(max_length=500)
     text = models.TextField()
 
+    class Meta:
+        ordering = ['step']
+
+    def __str__(self):
+        return 'Req '+str(self.step)+': '+str(self.name)
+
 
 class SubRequirement(TimeStampedModel):
     requirement = models.ForeignKey(Requirement)
-    step = models.IntegerField(unique=True)
+    step = models.IntegerField()
     name = models.CharField(max_length=500)
     text = models.TextField()
+
+    class Meta:
+        order_with_respect_to = 'requirement'
+
+    def __str__(self):
+        return 'SubReq '+str(self.step)+': '+str(self.name)
 
 
 class Response(TimeStampedModel):

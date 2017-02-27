@@ -1,0 +1,12 @@
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        {{ request.user.username }}'s Compliance Dashboard
+      <a href="{% url 'logout' %}" class="is-pulled-right button">Logout</a>
+    </h1>
+    <h2 class="subtitle">
+      {{ fqhc.name }}
+    </div>
+  </div>
+</section>

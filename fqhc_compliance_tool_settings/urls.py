@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from fqhc_compliance_tool import urls as fqhc_compliance_tool_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^s3direct/', include('s3direct.urls')),
+    # url(r'^', include('django.contrib.auth.urls')),
+    url(r'^', include(fqhc_compliance_tool_urls)),
 ]

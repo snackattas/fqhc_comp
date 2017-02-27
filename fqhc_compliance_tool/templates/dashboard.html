@@ -1,0 +1,8 @@
+{% include 'base_header.html' %}
+
+{% include "logged_in_header.html" %}
+
+{% for requirement in requirements %}
+<div title="{{requirement.text}}"}>{{requirement.step}}. {{requirement.name}}</div>
+{% endfor %}
+{% include 'base_footer.html' %}
